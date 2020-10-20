@@ -10,7 +10,7 @@ brazilRestaurants = ["Sushi Leblon", "Mani", "CT Boucherie"]; */
 
 //modeOfTransportation = ["4 wheeler", "Bike", "SkateBoard", "Scooter"];
 
-formOfEntertainment = ["Horse-back Riding", "Watch a movie", "Jet ski's", "Laser tag"];
+//formOfEntertainment = ["Horse-back Riding", "Watch a movie", "Jet ski's", "Laser tag"];
 
 function randomDestination () {
   let listOfdestinations = ["Bora Bora", "Japan", "Houston", "UAE", "Africa", "Hawaii", "Brazil"];
@@ -73,4 +73,11 @@ function randomModeOfTransportation(){
   let random = Math.floor((Math.random() * 4) + 0);
   let transportation = modeOfTransportation[random];
   return transportation;
+}
+
+function randomFormOfEntertainment(){
+  formOfEntertainment = ["Horse-back Riding", "Watch a movie", "Jet ski's", "Laser tag"];
+  let random = Math.floor((Math.random() * 4) + 0);
+  let entertainment = formOfEntertainment[random];
+  return entertainment;
 }

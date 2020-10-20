@@ -1,4 +1,4 @@
-destinations = ["Bora Bora", "Japan", "Houston", "UAE", "Africa", "Hawaii", "Brazil"];
+//destinations = ["Bora Bora", "Japan", "Houston", "UAE", "Africa", "Hawaii", "Brazil"];
 
 boraRestaurants = ["La Matira","La villa Mahana", "Bora Bora Yacht Club"];
 japanRestaurants = ["Gyu-kaku", "CoCo's", "Yakiniku"];
@@ -11,3 +11,12 @@ brazilRestaurants = ["Sushi Leblon", "Mani", "CT Boucherie"];
 modeOfTransportation = ["4 wheeler", "Bike", "SkateBoard", "Scooter"];
 
 formOfEntertainment = ["Horse-back Riding", "Watch a movie", "Jet ski's", "Laser tag"];
+
+function randomDestination () {
+  let listOfdestinations = ["Bora Bora", "Japan", "Houston", "UAE", "Africa", "Hawaii", "Brazil"];
+  let random = Math.floor((Math.random()* 7) + 0);
+  let destination = listOfdestinations[random];
+  return destination;
+}
+
+console.log(randomDestination());

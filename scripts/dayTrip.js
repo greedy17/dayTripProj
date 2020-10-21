@@ -60,21 +60,22 @@ function randomFormOfEntertainment(){
   return entertainment;
 }
 
-let dayTrip = alert("Welcome to the day trip generator! Today you are going to " + selectedLocation + ". While you're there you'll only be allowed to travel on a " + randomModeOfTransportation() + ". You're going to eat a delicious meal from " + randomRestaurant(selectedLocation) + ", and you'll finish the day with an exciting activity: " + randomFormOfEntertainment() + "!!");
+function dayTrip(location = selectedLocation, food = randomRestaurant(selectedLocation), activity = randomFormOfEntertainment(), transportation = randomModeOfTransportation()){
+let initialTrip;
+initialTrip = prompt(`Welcome to the day trip generator! Today you are going to ${location}! While you're there you'll only be allowed to travel on a ${transportation}. You're going to eat a delicious meal from ${food}, and you'll finish the day with an exciting activity: ${activity}!!
+If you are satisfied with the details of your day, type yes. If not, tell me what you would like to change (Location and food, activity, or transportation) ?`);
+if (initialTrip.toLowerCase() === "yes"){
+  alert("Awesome! Enjoy your trip!");
+ }else if(initialTrip.toLowerCase() === "location and food"){
+   let diffLocation = randomDestination();
+  alert("Your new location is " + diffLocation + ", and you're going to eat at " + randomRestaurant(diffLocation) + ". Your transportation is still " + transportation + ", and your activity is still " + activity + ".");
+ }else if(initialTrip.toLowerCase() === "activity"){
+   let diffActivity = randomFormOfEntertainment();
+  alert("Your new activity is " + diffActivity + ". Your location is still " + location + ", you're still eating at " + food + ", and you're still traveling on a " + transportation + ".");
+ }else if(initialTrip.toLowerCase() === "transportation"){
+   let diffRide = randomModeOfTransportation();
+  alert("Your new mode of transportation is " + diffRide + ". Your location is still " + location + ", you're still eating at " + food + ", and your activity is still " + activity + ".");
+ } 
+}
 
-let satisfaction = prompt("Are you satisfied with your trip details ? Yes or No");
-
-/*if (satisfaction.toLowerCase() === "yes") {
-  let haveFun;
-  haveFun = alert("Enjoy your day! Have fun!");
-}else if (satisfaction.toLowerCase() === "no"){
-  let makeAChange;
-  makeAChange = prompt("What would you like to change ? Location and food, ride, event, or all ? ");
-  if (makeAChange.toLowerCase() === "location and food"){
-    dayTrip.selectedLocation = randomDestination();
-    dayTrip;
-  }
-}else {
-  alert("invalid selection, please say yes or no.");
-  randomReselection;
-}*/
+dayTrip();

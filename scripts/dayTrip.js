@@ -75,7 +75,12 @@ if (initialTrip.toLowerCase() === "yes"){
  }else if(initialTrip.toLowerCase() === "transportation"){
    let diffRide = randomModeOfTransportation();
   alert("Your new mode of transportation is " + diffRide + ". Your location is still " + location + ", you're still eating at " + food + ", and your activity is still " + activity + ".");
+ }else{
+   alert("Invalid selection, try again");
+   dayTrip();
  } 
 }
 
 dayTrip();
+
+console.log("Trip complete! Come back when you're ready for another adventure!");
